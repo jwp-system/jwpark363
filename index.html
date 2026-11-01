@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>박종욱 · AI 엔지니어</title>
+  <meta name="description" content="25년간 쌓아온 현업 경험에 AI·AX 기술을 더해, 업무를 아는 개발자 박종욱의 프로필">
+  <meta property="og:title" content="박종욱 · AI 엔지니어">
+  <meta property="og:description" content="LLM · RAG · AI Agent · Computer Vision 프로젝트와 25년 IT 경력">
+  <meta property="og:image" content="https://jwpark363.github.io/myhome/me.png">
+  <link rel="icon" type="image/svg+xml" href="https://jwpark363.github.io/myhome/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef2f7;
+      --surface: #ffffff;
+      --surface-alt: #f6f8fb;
+      --text: #1f2933;
+      --muted: #5b6774;
+      --line: #e3e8ef;
+      --brand: #0f5c63;       /* 청바다색 · 늘 푸른 소나무 */
+      --brand-strong: #0a3f45;
+      --brand-soft: #e3f1f1;
+      --accent: #e08a3c;
+      --shadow: 0 8px 24px rgba(15, 40, 60, .08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0e1418;
+        --surface: #161e23;
+        --surface-alt: #1b252b;
+        --text: #e4eaee;
+        --muted: #9aa7b1;
+        --line: #26323a;
+        --brand: #4fb3b0;
+        --brand-strong: #7fd0cc;
+        --brand-soft: #1d3436;
+        --accent: #f0a35e;
+        --shadow: 0 8px 24px rgba(0, 0, 0, .35);
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0e1418;
+      --surface: #161e23;
+      --surface-alt: #1b252b;
+      --text: #e4eaee;
+      --muted: #9aa7b1;
+      --line: #26323a;
+      --brand: #4fb3b0;
+      --brand-strong: #7fd0cc;
+      --brand-soft: #1d3436;
+      --accent: #f0a35e;
+      --shadow: 0 8px 24px rgba(0, 0, 0, .35);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+    a { color: inherit; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: linear-gradient(135deg, #0a3f45 0%, #0f5c63 55%, #1a7a7c 100%);
+      color: #fff;
+      padding: 72px 16px 96px;
+      text-align: center;
+      position: relative;
+    }
+    .theme-toggle {
+      position: absolute; top: 16px; right: 16px;
+      background: rgba(255,255,255,.14); color: #fff;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 999px; padding: 6px 12px;
+      font: inherit; font-size: .85rem; cursor: pointer;
+    }
+    .avatar {
+      width: 148px; height: 148px; border-radius: 50%;
+      object-fit: cover; background: #fff;
+      border: 4px solid rgba(255,255,255,.85);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .hero h1 { font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 900; margin-top: 18px; letter-spacing: -.02em; }
+    .hero .role { font-size: 1rem; opacity: .85; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+    .hero .tagline { font-size: clamp(1rem, 3vw, 1.2rem); opacity: .95; margin: 14px auto 28px; max-width: 640px; }
+    .contacts { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+    .contacts a {
+      text-decoration: none; font-size: .95rem;
+      padding: 9px 18px; border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      transition: background .2s, transform .2s;
+    }
+    .contacts a:hover { background: rgba(255,255,255,.26); transform: translateY(-2px); }
+
+    /* ---------- Layout ---------- */
+    main { max-width: 1080px; margin: -56px auto 0; padding: 0 16px 48px; position: relative; }
+    nav.toc {
+      display: flex; gap: 4px; flex-wrap: wrap; justify-content: center;
+      background: var(--surface); border-radius: 14px; padding: 8px;
+      box-shadow: var(--shadow); margin-bottom: 28px;
+    }
+    nav.toc a {
+      text-decoration: none; color: var(--muted); font-weight: 500; font-size: .95rem;
+      padding: 8px 14px; border-radius: 10px;
+    }
+    nav.toc a:hover { background: var(--brand-soft); color: var(--brand); }
+
+    section {
+      background: var(--surface); border-radius: 18px; box-shadow: var(--shadow);
+      padding: 40px clamp(20px, 5vw, 48px); margin-bottom: 24px;
+      scroll-margin-top: 16px;
+    }
+    section h2 {
+      font-size: 1.6rem; font-weight: 700; color: var(--brand-strong);
+      margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
+    }
+    section h2::before {
+      content: ""; width: 6px; height: 1.2em; border-radius: 3px; background: var(--brand);
+    }
+    .lead { font-size: 1.08rem; color: var(--muted); }
+    .note { margin-top: 14px; font-size: .92rem; color: var(--muted); }
+
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 28px; }
+    .stat { background: var(--surface-alt); border: 1px solid var(--line); border-radius: 14px; padding: 18px; text-align: center; }
+    .stat b { display: block; font-size: 1.8rem; font-weight: 900; color: var(--brand); line-height: 1.2; }
+    .stat span { font-size: .9rem; color: var(--muted); }
+
+    /* ---------- Projects ---------- */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .card {
+      background: var(--surface-alt); border: 1px solid var(--line); border-radius: 16px; padding: 26px;
+      display: flex; flex-direction: column; transition: transform .2s, border-color .2s, box-shadow .2s;
+    }
+    .card:hover { transform: translateY(-4px); border-color: var(--brand); box-shadow: var(--shadow); }
+    .card h3 { font-size: 1.25rem; color: var(--brand-strong); }
+    .card .subtitle { color: var(--muted); font-size: .92rem; margin: 4px 0 12px; }
+    .card .desc { font-size: .98rem; flex: 1; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+    .tag { background: var(--brand-soft); color: var(--brand); font-size: .8rem; font-weight: 500; padding: 4px 11px; border-radius: 999px; }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .links a {
+      text-decoration: none; font-size: .85rem; font-weight: 500;
+      color: var(--accent); border: 1px solid var(--accent); padding: 4px 12px; border-radius: 999px;
+    }
+    .links a:hover { background: var(--accent); color: #fff; }
+
+    /* ---------- Products ---------- */
+    .section-lead { color: var(--muted); margin: -12px 0 24px; }
+    .section-lead a { color: var(--brand); font-weight: 500; }
+    .card .meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+    .card .target { font-size: .82rem; font-weight: 500; color: var(--muted); }
+    .badge { font-size: .75rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); }
+    .badge.dev { background: rgba(224, 138, 60, .15); color: var(--accent); }
+
+    /* ---------- Timeline ---------- */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
+    .tl-item { position: relative; padding-bottom: 28px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-item::before {
+      content: ""; position: absolute; left: -28px; top: 6px; width: 16px; height: 16px; border-radius: 50%;
+      background: var(--surface); border: 4px solid var(--brand);
+    }
+    .tl-item h3 { font-size: 1.1rem; }
+    .tl-item .period { font-size: .88rem; color: var(--brand); font-weight: 500; }
+    .tl-item ul { margin: 8px 0 0 18px; color: var(--muted); }
+
+    /* ---------- Lists (education / skills) ---------- */
+    .box { background: var(--surface-alt); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+    .box h3 { font-size: 1.05rem; color: var(--brand-strong); margin-bottom: 10px; }
+    .box ul { list-style: none; }
+    .box li { padding: 7px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .96rem; }
+    .box li:last-child { border-bottom: none; }
+
+    footer { text-align: center; color: var(--muted); font-size: .9rem; padding: 8px 16px 40px; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 64px 16px 88px; }
+      section { padding: 28px 18px; }
+      nav.toc a { padding: 6px 10px; font-size: .88rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="테마 전환">🌓 테마</button>
+    <img class="avatar" src="https://jwpark363.github.io/myhome/me.png" alt="박종욱 프로필 사진">
+    <h1>박종욱</h1>
+    <p class="role">AI Agent Engineer</p>
+    <p class="tagline">25년간 쌓아온 현업 경험에 AI·AX 기술을 더해, 업무를 아는 개발자가 직접 만들고 운영합니다</p>
+    <div class="contacts">
+      <a href="tel:010-5457-6690">📱 010-5457-6690</a>
+      <a href="mailto:park363@daum.net">✉️ park363@daum.net</a>
+      <a href="https://github.com/jwpark363" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/jwpark363/myhome/blob/main/portfolio_20251123.pdf" target="_blank" rel="noopener">📽️ 포트폴리오</a>
+      <a href="https://github.com/jwpark363/myhome/blob/main/profile_20251123.pdf" target="_blank" rel="noopener">🪪 프로필</a>
+    </div>
+  </header>
+
+  <main>
+    <nav class="toc" aria-label="목차">
+      <a href="#about">소개</a>
+      <a href="#products">제품</a>
+      <a href="#projects">프로젝트</a>
+      <a href="#career">경력</a>
+      <a href="#education">학력·교육</a>
+      <a href="#skills">기술 스택</a>
+    </nav>
+
+    <section id="about">
+      <h2>소개</h2>
+      <p class="lead">
+        자바 개발자로 시작하여 16년간 기업 전산실에서 근무하며 다양한 기업 솔루션 구축과 운영을 경험했습니다.
+        이후 DT/DX 분야의 RPA 솔루션 기반 프로젝트 PM으로 5년간 활동하였고
+        최근 원티드스페이스의 AI 에이전트 과정 2기에서 최신 AI 기술 학습 및 프로젝트 진행 후
+        개인 개발자로 중소규모 식당, 학원 및 회사에 필요한 시스템 개발, 공급 및 운영 지원을 하고있습니다.
+      </p>
+      <div class="stats">
+        <div class="stat"><b>25+</b><span>년 IT 경력</span></div>
+        <div class="stat"><b>16</b><span>년 기업 전산실</span></div>
+        <div class="stat"><b>5</b><span>년 RPA PM</span></div>
+        <div class="stat"><b>5</b><span>개 주요 프로젝트</span></div>
+      </div>
+      <p class="note">🌲 페이지의 청바다색은 언제나 푸르른 소나무를 상징합니다.</p>
+    </section>
+
+    <section id="products">
+      <h2>제품</h2>
+      <p class="section-lead">
+        작은 가게, 작은 학원, 작은 회사에 꼭 맞는 크기의 업무 시스템 ·
+        <a href="https://jwp-system.duckdns.org/" target="_blank" rel="noopener">JWP-SYSTEM 바로가기</a>
+      </p>
+      <div class="grid">
+        <article class="card">
+          <div class="meta">
+            <span class="target">식당 · 분식 · 주점</span>
+            <span class="badge">운영 중 · 파일럿 무료</span>
+          </div>
+          <h3>🍽️ QR Order</h3>
+          <p class="subtitle">테이블 QR 주문 시스템</p>
+          <p class="desc">테이블 QR로 손님이 직접 주문하고, 주방·홀·매니저가 각자 화면에서 이어받습니다.</p>
+          <div class="links">
+            <a href="https://jwp-system.duckdns.org/qr" target="_blank" rel="noopener">🔗 소개 보기</a>
+            <a href="https://jwp-system.duckdns.org/contact?type=qr" target="_blank" rel="noopener">✉️ 문의하기</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="meta">
+            <span class="target">보습 · 교과 학원</span>
+            <span class="badge">운영 중 · 운영비 0원</span>
+          </div>
+          <h3>🏫 Academy</h3>
+          <p class="subtitle">학원 출결 · 수납 관리</p>
+          <p class="desc">강사가 휴대폰으로 출석을 누르면 결석 문자가 가고, 입금 문자로 납부가 자동 확인됩니다.</p>
+          <div class="links">
+            <a href="https://jwp-academy.duckdns.org/intro" target="_blank" rel="noopener">🔗 소개 보기</a>
+            <a href="https://jwp-system.duckdns.org/contact?type=academy" target="_blank" rel="noopener">✉️ 문의하기</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="meta">
+            <span class="target">도소매 · 제조 · 서비스 소기업</span>
+            <span class="badge dev">개발 중 · 파일럿 사전 모집</span>
+          </div>
+          <h3>📒 바로ERP</h3>
+          <p class="subtitle">소기업 매입 · 매출 · 재고 장부</p>
+          <p class="desc">매입·매출·재고·수금을 한 장부로. 은행·홈택스 엑셀을 올리면 전표와 자동으로 맞춥니다.</p>
+          <div class="links">
+            <a href="https://jwp-system.duckdns.org/contact?type=erp" target="_blank" rel="noopener">📝 파일럿 사전 신청</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>주요 프로젝트</h2>
+      <div class="grid" id="projectList"></div>
+    </section>
+
+    <section id="career">
+      <h2>경력</h2>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <section id="education">
+      <h2>학력 및 교육</h2>
+      <div class="grid">
+        <div class="box">
+          <h3>🎓 학력</h3>
+          <ul>
+            <li>고려대학교 경영대학원 경영학 석사(MBA)</li>
+            <li>부산대학교 자연과학대학 수학과 학사</li>
+            <li>부산 양정고등학교 졸업</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>📚 교육</h3>
+          <ul>
+            <li>2025 · 원티드스페이스 AI 에이전트 과정 2기</li>
+            <li>2018 · 한국데이터진흥원 빅데이터 엔지니어링</li>
+            <li>2017 · 서울대학교 빅데이터 과정 2기</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>기술 스택</h2>
+      <div class="grid" id="skillList"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year">2026</span> 박종욱 · 끊임없는 배움과 성장을 추구합니다.</p>
+  </footer>
+
+  <script>
+    const projects = [
+      {
+        title: "🤖 WanteDash",
+        subtitle: "학원 행정 자동화 AI 솔루션",
+        desc: "LLM, RAG, 구글 Drive API, 디스코드 API를 활용한 학원 행정 자동화 솔루션. 구글 API 툴 개발 및 에이전트 백엔드/프론트 구현.",
+        techs: ["LangChain", "LangGraph", "PostgreSQL", "Google API"],
+        links: []
+      },
+      {
+        title: "👁️ 근태의전설",
+        subtitle: "AI 기반 지능형 비접촉식 근태관리 시스템",
+        desc: "YOLO 객체 인식 기술을 활용한 근태 시스템. OpenCV와 PyQT5를 이용한 클라이언트 개발 및 Face Recognition 모델 적용.",
+        techs: ["YOLO", "OpenCV", "PyQT5", "Face Recognition"],
+        links: []
+      },
+      {
+        title: "🍲 K-Food Demon Hunter",
+        subtitle: "한식 정보 제공 시스템",
+        desc: "CNN 기반 이미지 분류 모델(90% 이상 정확도)과 재료 기반 추천 시스템. React/TypeScript로 웹 서비스 구현 및 배포.",
+        techs: ["CNN", "React", "TypeScript", "Scikit-learn"],
+        links: [{ title: "Live Demo", link: "https://jwpark363.github.io/kfood/" }]
+      },
+      {
+        title: "📰 CONE",
+        subtitle: "저품질 기사 검증 시스템",
+        desc: "뉴스 데이터 분석을 통한 저품질 기사 현황 파악 및 검증 솔루션. 뉴스빅데이터 해커톤 제출 프로젝트.",
+        techs: ["Pandas", "Dash", "React", "OpenAI API"],
+        links: [{ title: "Live Demo", link: "https://jwpark363.github.io/clickbait" }]
+      },
+      {
+        title: "⚛️ React Apps",
+        subtitle: "React 사이드 프로젝트",
+        desc: "React 프론트엔드 학습을 위한 앱 개발 연습.",
+        techs: ["React", "TypeScript", "Styled Components", "Jotai"],
+        links: [
+          { title: "Modern TODO", link: "https://jwpark363.github.io/modern_todo/" },
+          { title: "Top30 Coin", link: "https://jwpark363.github.io/top30coins/" },
+          { title: "NewFlix", link: "https://jwpark363.github.io/newflix/" }
+        ]
+      }
+    ];
+
+    const career = [
+      {
+        title: "개인 개발자 · JWP-SYSTEM",
+        period: "2026.03 ~ 현재",
+        items: [
+          "소규모 사업장용 업무 시스템 개발 · 공급 및 운영 지원",
+          "QR Order : 식당 테이블 QR 주문 시스템 (운영 중)",
+          "Academy : 학원 출결 · 수납 관리 시스템 (운영 중)",
+          "바로ERP : 소기업 매입 · 매출 · 재고 장부 (개발 중)"
+        ]
+      },
+      {
+        title: "AI Agent 엔지니어",
+        period: "2025.07 ~ 2026.02",
+        items: ["원티드스페이스 AI 에이전트 과정 2기 학습", "최신 AI 기술 학습 및 프로젝트 진행"]
+      },
+      {
+        title: "AI 기반 설비진단 솔루션 공급회사 · 운영팀 리더",
+        period: "2022.12 ~ 2024.07",
+        items: ["GS화학 설비진단 솔루션 공급 PM"]
+      },
+      {
+        title: "RPA PM",
+        period: "2018.07 ~ 2022.11",
+        items: [
+          "AA, UiPath, A.Works RPA 프로젝트 진행",
+          "삼성전자, 현대자동차, 현대해상, 수협은행, 병원 RPA 프로젝트",
+          "하나은행 RPA 프로젝트 및 포털 설계"
+        ]
+      },
+      {
+        title: "기업 전산실 (정보시스템실)",
+        period: "2002.04 ~ 2018.06",
+        items: [
+          "제조(6년) : SAP ERP, 그룹웨어, MES 시스템 구축 및 운영",
+          "항공(10년) : 최신 AI 기술 학습 및 프로젝트 진행"
+        ]
+      },
+      {
+        title: "자바 엔지니어",
+        period: "1998.08 ~ 2002.03",
+        items: []
+      }
+    ];
+
+    const skills = [
+      { title: "🧠 AI / ML", items: ["LangChain, LangGraph", "OpenAI, RAG, Vector DB", "YOLO, OpenCV", "CNN, Face Recognition"] },
+      { title: "🛠️ Backend", items: ["Python, FastAPI", "PostgreSQL, Milvus", "Node.js", "Java"] },
+      { title: "🎨 Frontend", items: ["React, TypeScript", "HTML / CSS / JavaScript", "PyQT5", "Vite"] },
+      { title: "🧰 Tools & Others", items: ["Google Drive / Sheets API", "Discord API", "RPA (UiPath, AA)", "Git, Docker"] }
+    ];
+
+    document.getElementById("projectList").innerHTML = projects.map(p => `
+      <article class="card">
+        <h3>${p.title}</h3>
+        <p class="subtitle">${p.subtitle}</p>
+        <p class="desc">${p.desc}</p>
+        <div class="tags">${p.techs.map(t => `<span class="tag">${t}</span>`).join("")}</div>
+        ${p.links.length ? `<div class="links">${p.links.map(l =>
+          `<a href="${l.link}" target="_blank" rel="noopener">🔗 ${l.title}</a>`).join("")}</div>` : ""}
+      </article>`).join("");
+
+    document.getElementById("timeline").innerHTML = career.map(c => `
+      <div class="tl-item">
+        <h3>${c.title}</h3>
+        <p class="period">${c.period}</p>
+        ${c.items.length ? `<ul>${c.items.map(i => `<li>${i}</li>`).join("")}</ul>` : ""}
+      </div>`).join("");
+
+    document.getElementById("skillList").innerHTML = skills.map(s => `
+      <div class="box">
+        <h3>${s.title}</h3>
+        <ul>${s.items.map(i => `<li>${i}</li>`).join("")}</ul>
+      </div>`).join("");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // 라이트/다크 테마 전환 (선택값은 브라우저에 저장)
+    const root = document.documentElement;
+    try {
+      const saved = localStorage.getItem("theme");
+      if (saved) root.dataset.theme = saved;
+    } catch (e) {}
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      const isDark = root.dataset.theme
+        ? root.dataset.theme === "dark"
+        : matchMedia("(prefers-color-scheme: dark)").matches;
+      root.dataset.theme = isDark ? "light" : "dark";
+      try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    });
+  </script>
+</body>
+</html>
